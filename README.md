@@ -1,2 +1,3 @@
-# gocleanops-landing
-CleanOps arena Alpha landing preview (static)
+# CleanOps landing preview
+
+Static soft-launch host for arena Alpha. Canonical domain: gocleanops.com (Astra).
