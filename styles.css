@@ -1,1 +1,137 @@
-/* placeholder */
+:root {
+  --bg: #F7F4EF;
+  --surface: #FFFFFF;
+  --text: #1A1A1A;
+  --muted: #6B7280;
+  --primary: #0F6B5C;
+  --accent: #E07A3D;
+  --accent-hover: #c8662f;
+  --border: #E5E0D8;
+  --warn: #B45309;
+  --radius: 12px;
+  --font: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+a { color: var(--primary); }
+.wrap { width: min(1080px, 92vw); margin: 0 auto; }
+header {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0;
+  background: rgba(247,244,239,.94);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.logo {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-weight: 800; letter-spacing: .01em; color: var(--text); text-decoration: none;
+}
+.logo img { width: 28px; height: 28px; display: block; }
+.nav-cta { display: flex; gap: .6rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: .7rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font: inherit;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-ghost { background: transparent; border-color: var(--border); color: var(--text); }
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+.hero { padding: 4rem 0 3rem; }
+.eyebrow {
+  color: var(--primary);
+  font-size: .85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 0 0 .75rem;
+}
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; margin: 0 0 1rem; color: var(--text); }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 42rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+section { padding: 2.5rem 0; border-top: 1px solid var(--border); }
+h2 { font-size: 1.45rem; margin: 0 0 1rem; color: var(--primary); }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+}
+.card h3 { margin: 0 0 .35rem; color: var(--text); }
+.price { font-size: 1.75rem; font-weight: 700; color: var(--primary); margin: .5rem 0 1rem; }
+.card ul { margin: 0 0 1.25rem; padding-left: 1.1rem; color: var(--muted); }
+.card li { margin: .35rem 0; }
+.steps { counter-reset: step; list-style: none; padding: 0; margin: 0; }
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: .85rem 0 .85rem 2.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+.steps li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: .85rem;
+  width: 1.85rem; height: 1.85rem;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  display: grid; place-items: center;
+  font-weight: 700; font-size: .85rem;
+}
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .85rem 1rem;
+  margin-bottom: .65rem;
+}
+.faq summary { cursor: pointer; font-weight: 600; }
+.refund {
+  background: var(--surface);
+  border-left: 3px solid var(--warn);
+  padding: 1rem 1.15rem;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+form.waitlist {
+  display: grid;
+  gap: .75rem;
+  max-width: 32rem;
+}
+label { display: grid; gap: .35rem; font-size: .9rem; color: var(--muted); }
+input, select {
+  padding: .65rem .75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+.note { font-size: .85rem; color: var(--muted); }
+footer {
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .9rem;
+}
+footer .cta-row { margin: 1rem 0; }
+@media (max-width: 640px) {
+  .hero { padding-top: 2.5rem; }
+}
